@@ -9,7 +9,8 @@ Papa.parse('data.csv', {
                     className: 'dt-control',
                     orderable: false,
                     data: null,
-                    defaultContent: '<button class="expand-button">詳細資訊</button>'
+                    defaultContent: '<button class="expand-button">詳細資訊</button>',
+                    responsivePriority: 1
                 },
                 { 
                     data: '課程名稱',

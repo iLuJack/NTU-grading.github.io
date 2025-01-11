@@ -38,15 +38,14 @@
 
 .expand-button {
     padding: 5px 10px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
     border-radius: 4px;
     cursor: pointer;
 }
 
 .expand-button:hover {
-    background-color: #45a049;
+    background-color: #e0e0e0;
 }
 
 .expanded-content {
@@ -78,4 +77,10 @@ td.dt-control {
 
 tr.shown td.dt-control button {
     background-color: #f44336;
+}
+
+/* Make sure the button column has enough width */
+.dt-control {
+    min-width: 100px;
+    text-align: center;
 }
