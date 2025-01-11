@@ -33,6 +33,11 @@ Papa.parse('data-simplified-with-percentage.csv', {
             pageLength: 25
         });
     },
+    buttons: [
+        'copy',
+        'csv',
+        'excel'
+    ],
     error: function(error) {
         console.error('Error parsing CSV:', error);
     }
