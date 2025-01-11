@@ -1,62 +1,13 @@
+/* Container for the table */
 .container {
     margin: 20px;
     overflow-x: auto;
 }
 
-.nowrap {
-    white-space: nowrap !important;
-}
-
-table {
-    border-collapse: collapse;
-    width: 100%;
-    min-width: 1000px;
-}
-
-th, td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-}
-
-th {
-    background-color: #f2f2f2;
-    cursor: pointer;
-}
-
-th:hover {
-    background-color: #ddd;
-}
-
-tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-tr:hover {
-    background-color: #f5f5f5;
-}
-
-.upload-section {
-    margin: 20px;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-.upload-section form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    max-width: 400px;
-}
-
-.upload-section input,
-.upload-section textarea {
-    padding: 8px;
-}
-
-.upload-section button {
-    padding: 10px;
+/* Toggle button styling */
+.toggle-btn {
+    margin: 10px 0;
+    padding: 8px 16px;
     background-color: #4CAF50;
     color: white;
     border: none;
@@ -64,17 +15,16 @@ tr:hover {
     cursor: pointer;
 }
 
-.upload-section button:hover {
+.toggle-btn:hover {
     background-color: #45a049;
 }
 
-#gradeTable td {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+/* Table cell text handling */
+.nowrap {
+    white-space: nowrap !important;
 }
 
-/* Optional: Add max-width to cells if needed */
-#gradeTable td:first-child {  /* For 課程名稱 column */
-    max-width: 200px;
+/* Header visibility control */
+.hidden-header {
+    display: none !important;
 }
