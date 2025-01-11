@@ -1,4 +1,28 @@
+/* Container */
+.container {
+    max-width: 95%;
+    margin: 2rem auto;
+    overflow-x: auto;
+}
+
 /* Text handling */
 .nowrap {
     white-space: nowrap !important;
+}
+
+/* DataTables overrides */
+.dataTables_wrapper {
+    padding: 1rem;
+}
+
+/* Ensure horizontal scroll works properly */
+.dataTables_wrapper .dataTables_scroll {
+    margin-bottom: 1rem;
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+    .container {
+        margin: 1rem auto;
+    }
 }

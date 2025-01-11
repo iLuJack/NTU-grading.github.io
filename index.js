@@ -27,8 +27,13 @@ Papa.parse('data-simplified-with-percentage.csv', {
                 }
             ],
             language: {
-                url: '//cdn.datatables.net/plug-ins/1.13.7/i18n/zh-HANT.json'
-            }
+                url: 'https://cdn.datatables.net/plug-ins/1.13.7/i18n/zh-HANT.json'
+            },
+            order: [[0, 'asc']],
+            pageLength: 25
         });
+    },
+    error: function(error) {
+        console.error('Error parsing CSV:', error);
     }
 });
