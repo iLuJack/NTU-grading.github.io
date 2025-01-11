@@ -1,4 +1,4 @@
-Papa.parse('data.csv', {
+Papa.parse('data-simplified-with-percentage.csv', {
     download: true,
     header: true,
     complete: function(results) {
@@ -11,26 +11,12 @@ Papa.parse('data.csv', {
                 { data: '學期' },
                 { data: 'A+' },
                 { data: 'A' },
-                { data: 'A以下' },
-                { data: 'A-以上' },
                 { data: 'A-' },
-                { data: 'A-以下' },
-                { data: 'B+以上' },
                 { data: 'B+' },
-                { data: 'B+以下' },
-                { data: 'B以上' },
                 { data: 'B' },
-                { data: 'B以下' },
-                { data: 'B-以上' },
                 { data: 'B-' },
-                { data: 'B-以下' },
-                { data: 'C+以上' },
                 { data: 'C+' },
-                { data: 'C+以下' },
-                { data: 'C以上' },
                 { data: 'C' },
-                { data: 'C以下' },
-                { data: 'C-以上' },
                 { data: 'C-' },
                 { data: 'F' }
             ],
