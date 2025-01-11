@@ -1,54 +1,34 @@
-// Grade order mapping for sorting
-const gradeOrder = {
-    'A+': 1, 'A': 2, 'A-': 3,
-    'B+': 4, 'B': 5, 'B-': 6,
-    'C+': 7, 'C': 8, 'C-': 9,
-    'D+': 10, 'D': 11, 'D-': 12,
-    'F': 13
-};
-
-// Custom sorting function for grades
-$.fn.dataTable.ext.type.order['grade-pre'] = function(data) {
-    return gradeOrder[data] || 999; // Unknown grades go to the end
-};
-
-// Function to get grade CSS class
-function getGradeClass(grade) {
-    return 'grade-' + grade.replace('+', '-plus').replace('-', '-minus');
-}
-
-// Load and parse CSV data
 Papa.parse('data.csv', {
-    download: true,
-    header: true,
-    complete: function(results) {
+    download: true,  // Automatically download the CSV file
+    header: true,    // First row contains headers
+    complete: function(results) {  // Called when parsing is complete
         $('#gradeTable').DataTable({
-            data: results.data,
+            data: results.data,    // The parsed CSV data
             columns: [
-                { data: 'StudentID' },
-                { data: 'Name' },
-                { 
-                    data: 'Grade',
-                    type: 'grade',
-                    render: function(data, type, row) {
-                        if (type === 'display') {
-                            return `<span class="grade-cell ${getGradeClass(data)}">${data}</span>`;
-                        }
-                        return data;
-                    }
-                },
-                { 
-                    data: 'Score',
-                    type: 'num'
-                },
-                { data: 'Status' }
+                { data: '課程名稱' },  // Maps column to 'StudentID' field in CSV
+                { data: '班次' },       // Maps column to 'Name' field
+                { data: '授課教師'},
+                { data: '學期'},
+                { data: 'A+比例'},
+                { data: 'A比例'},
+                { data: 'A-比例'},
+                { data: 'B+比例'},
+                { data: 'B比例'},
+                { data: 'B-比例'},
+                { data: 'C+比例'},
+                { data: 'C比例'},
+                { data: 'C-比例'},
+                { data: 'F比例'}
             ],
-            responsive: true,
-            pageLength: 25,
-            order: [[2, 'asc']], // Default sort by grade
-            dom: 'Bfrtip',
+            responsive: true,           // Makes table responsive on mobile
+            pageLength: 25,            // Shows 25 rows per page
+            order: [[2, 'asc']],       // Default sort by grade column (index 2) ascending
+            dom: 'Bfrtip',             // DataTables layout elements
             buttons: [
-                'copy', 'csv', 'excel', 'pdf'
+                'copy',                 // Adds button to copy data
+                'csv',                  // Adds button to export as CSV
+                'excel',                // Adds button to export as Excel
+                'pdf'                   // Adds button to export as PDF
             ]
         });
     }
