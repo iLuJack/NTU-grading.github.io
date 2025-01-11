@@ -1,0 +1,125 @@
+Commit: d7c5b3948cdfd2a43ae2e4f74ee6b59124a119c5
+Author: D d
+Date: Sat Jan 11 20:00:38 2025 +0800
+Message: refactor : styles.css
+
+
+Commit: e8c513dab92c2929f54c79bfe323fb939079d381
+Author: D d
+Date: Sat Jan 11 19:53:27 2025 +0800
+Message: update : add display : hidden
+
+
+Commit: 924775e3b5a8ef677fb512277eddfda3cb328c46
+Author: D d
+Date: Sat Jan 11 19:46:26 2025 +0800
+Message: first-commit : let user choose their preferred display-mode
+
+
+Commit: e56954b972f2f79a8608ae36bc32a73cdec57ca9
+Author: D d
+Date: Sat Jan 11 19:37:17 2025 +0800
+Message: format : text no-wrap
+
+
+Commit: f93c14b9b46f0a3edc3ded59c63ad6c24b3ce905
+Author: D d
+Date: Sat Jan 11 19:29:13 2025 +0800
+Message: format : modify col-span to 3
+
+
+Commit: 347df8ac2b8e2da852d0f6fea69ebd734918d844
+Author: D d
+Date: Sat Jan 11 19:23:24 2025 +0800
+Message: format : simpify col name
+
+
+Commit: f8a3e628cd33229bb64c43e607a5821e74f79554
+Author: D d
+Date: Sat Jan 11 19:14:42 2025 +0800
+Message: format : expand the data columns and corresponding parts
+
+
+Commit: c634151d392e3e31ccc0eebec37eaf04b0d4519f
+Author: D d
+Date: Sat Jan 11 18:26:15 2025 +0800
+Message: format : replace NaN with empty cells
+
+
+Commit: 74a470f6bb5ec5ebbfe269401de22061308e38d5
+Author: D d
+Date: Sat Jan 11 18:13:38 2025 +0800
+Message: update : delete extra rows in the data, I hope this would solve the issues
+
+
+Commit: 3cc519d58257d9f3a57d418733520f78a533f98b
+Author: D d
+Date: Sat Jan 11 18:06:00 2025 +0800
+Message: debug : console.log the bugged data to see what happened
+
+
+Commit: 92d825dc39ae9744bc468ce68ff477542c5ec5ab
+Author: D d
+Date: Sat Jan 11 18:00:55 2025 +0800
+Message: format : re-format data.csv to deal with issues[https://datatables.net/tn/4]
+
+
+Commit: 0755680c8aea695ef3948bd09cf44ae80c0270e6
+Author: D d
+Date: Sat Jan 11 17:47:15 2025 +0800
+Message: format : modify poor-formatted data
+
+
+Commit: 598e4b39f073a8eba4d439387cac092624fec393
+Author: D d
+Date: Sat Jan 11 16:57:54 2025 +0800
+Message: format : delete a poor-formatted data
+
+
+Commit: f2bac558837866e46de07a1348cfdbdbdfefc5b1
+Author: D d
+Date: Sat Jan 11 16:48:51 2025 +0800
+Message: update : merge all the available grades distribution data\nformat : standarize the data format\nupdate : simpify the js to first test the layout of data.csv
+
+
+Commit: 7bc6dcea7d79a120e94b395e53811870f3ba3125
+Author: D d
+Date: Sat Jan 11 15:53:10 2025 +0800
+Message: test: modify the header to see how the page is reandered
+
+
+Commit: f63acdb24933cbdf7f4acbcfea9d9fd91e4cf818
+Author: D d
+Date: Sat Jan 11 15:51:16 2025 +0800
+Message: issue : update the expand-button priority
+
+
+Commit: 0497a776b07d80406a70c21e36a174641738f00e
+Author: D d
+Date: Sat Jan 11 15:46:38 2025 +0800
+Message: test : hidden grade distribution
+
+
+Commit: 44c98f680c5ba477955dfdf7675ae0f8130cf3c9
+Author: D d
+Date: Sat Jan 11 15:36:11 2025 +0800
+Message: modify html table and add some features to .js
+
+
+Commit: 91f116edbd0686a7765c4aacff6c70fcbb415995
+Author: D d
+Date: Sat Jan 11 15:31:52 2025 +0800
+Message: try sort the real data
+
+
+Commit: 50378d184288f5ee1f14d04cbdb8ff6e41481a5c
+Author: D d
+Date: Sat Jan 11 15:07:04 2025 +0800
+Message: test : table-sort
+
+
+Commit: 70a0df08f8042afabff8e7ca5b1c15c35b6ae7db
+Author: D d
+Date: Sat Jan 11 14:27:10 2025 +0800
+Message: inital commit : test
+
