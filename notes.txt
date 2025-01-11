@@ -1,3 +1,6 @@
+Sorry, but I'm so sicked of dealing with the table-display issues.
+I wish I or someone would be willing to build a selector to choose the display mode.
+
 Commit: d7c5b3948cdfd2a43ae2e4f74ee6b59124a119c5
 Author: D d
 Date: Sat Jan 11 20:00:38 2025 +0800
