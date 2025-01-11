@@ -25,3 +25,6 @@ Papa.parse('data.csv', {
         });
     }
 });
+let table = document.getElementById('gradeTable');
+let cell = table.rows[2515].cells[1].textContent;
+console.log(cell);
