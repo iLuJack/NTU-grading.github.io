@@ -1,0 +1,37 @@
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.grade-cell {
+    font-weight: bold;
+}
+
+.grade-A-plus { 
+    color: #1a5f7a; 
+}
+
+.grade-A { 
+    color: #1e88e5; 
+}
+
+.grade-B-plus { 
+    color: #43a047; 
+}
+
+.grade-B { 
+    color: #7cb342; 
+}
+
+.grade-C-plus { 
+    color: #fb8c00; 
+}
+
+.grade-C { 
+    color: #f4511e; 
+}
+
+.grade-F { 
+    color: #d32f2f; 
+}

@@ -3,91 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My GitHub Pages Test</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 20px;
-            background-color: #f0f2f5;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background-color: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        h1 {
-            color: #1a73e8;
-            text-align: center;
-        }
-        .test-section {
-            margin: 20px 0;
-            padding: 15px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
-        .success {
-            color: #28a745;
-        }
-        .button {
-            background-color: #1a73e8;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        .button:hover {
-            background-color: #1557b0;
-        }
-    </style>
+    <title>Grade Sorting System</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.dataTables.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>GitHub Pages Test Page</h1>
-        
-        <div class="test-section">
-            <h2>✅ If you see this, your page is working!</h2>
-            <p>This is a simple test page to verify your GitHub Pages setup.</p>
-        </div>
-
-        <div class="test-section">
-            <h3>Test Features:</h3>
-            <ul>
-                <li>Basic HTML structure</li>
-                <li>CSS styling</li>
-                <li>Responsive design</li>
-                <li>Interactive elements</li>
-            </ul>
-        </div>
-
-        <div class="test-section">
-            <h3>Interactive Test:</h3>
-            <button class="button" onclick="alert('JavaScript is working!')">Click me!</button>
-        </div>
-
-        <div class="test-section">
-            <h3>Current Time:</h3>
-            <p id="time"></p>
-        </div>
-
-        <footer style="text-align: center; margin-top: 40px;">
-            <p>Created for testing GitHub Pages</p>
-        </footer>
+        <h1>Grade Results</h1>
+        <table id="gradeTable" class="display responsive nowrap">
+            <thead>
+                <tr>
+                    <th>Student ID</th>
+                    <th>Name</th>
+                    <th>Grade</th>
+                    <th>Score</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Data will be dynamically inserted -->
+            </tbody>
+        </table>
     </div>
 
-    <script>
-        // Display current time
-        function updateTime() {
-            const timeElement = document.getElementById('time');
-            timeElement.textContent = new Date().toLocaleString();
-        }
-        updateTime();
-        setInterval(updateTime, 1000);
-    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>
