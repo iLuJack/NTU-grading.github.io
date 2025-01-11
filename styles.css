@@ -1,86 +1,33 @@
 .container {
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 0 20px;
+    margin: 20px;
+    overflow-x: auto;
 }
 
-.grade-cell {
-    font-weight: bold;
+table {
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 1000px;
 }
 
-.grade-A-plus { 
-    color: #1a5f7a; 
-}
-
-.grade-A { 
-    color: #1e88e5; 
-}
-
-.grade-B-plus { 
-    color: #43a047; 
-}
-
-.grade-B { 
-    color: #7cb342; 
-}
-
-.grade-C-plus { 
-    color: #fb8c00; 
-}
-
-.grade-C { 
-    color: #f4511e; 
-}
-
-.grade-F { 
-    color: #d32f2f; 
-}
-
-.expand-button {
-    padding: 5px 10px;
-    background-color: #f0f0f0;
+th, td {
     border: 1px solid #ddd;
-    border-radius: 4px;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
     cursor: pointer;
 }
 
-.expand-button:hover {
-    background-color: #e0e0e0;
+th:hover {
+    background-color: #ddd;
 }
 
-.expanded-content {
-    padding: 20px;
+tr:nth-child(even) {
     background-color: #f9f9f9;
 }
 
-.grade-distribution {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
-}
-
-.grade-distribution th,
-.grade-distribution td {
-    padding: 8px;
-    text-align: center;
-    border: 1px solid #ddd;
-}
-
-.grade-distribution th {
+tr:hover {
     background-color: #f5f5f5;
-}
-
-td.dt-control {
-    text-align: center;
-    cursor: pointer;
-}
-
-tr.shown td.dt-control button {
-    background-color: #f44336;
-}
-
-/* Make sure the button column has enough width */
-.dt-control {
-    min-width: 100px;
-    text-align: center;
 }
