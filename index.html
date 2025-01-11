@@ -1,24 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grade Sorting System</title>
+    <title>台大課程成績分布</title>
+    <!-- DataTables CSS -->
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.dataTables.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>Grade Results</h1>
+        <h1>台大課程成績分布查詢系統</h1>
         <table id="gradeTable" class="display responsive nowrap">
             <thead>
                 <tr>
-                    <th>Student ID</th>
-                    <th>Name</th>
-                    <th>Grade</th>
-                    <th>Score</th>
-                    <th>Status</th>
+                    <th>課程名稱</th>
+                    <th>班次</th>
+                    <th>授課教師</th>
+                    <th>學期</th>
+                    <th>A+</th>
+                    <th>A</th>
+                    <th>A-</th>
+                    <th>B+</th>
+                    <th>B</th>
+                    <th>B-</th>
+                    <th>C+</th>
+                    <th>C</th>
+                    <th>C-</th>
+                    <th>F</th>
                 </tr>
             </thead>
             <tbody>
@@ -27,9 +38,15 @@
         </table>
     </div>
 
+    <!-- Required Scripts -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.html5.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
     <script src="index.js"></script>
 </body>
