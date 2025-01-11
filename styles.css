@@ -3,6 +3,10 @@
     overflow-x: auto;
 }
 
+.nowrap {
+    white-space: nowrap !important;
+}
+
 table {
     border-collapse: collapse;
     width: 100%;
@@ -13,7 +17,6 @@ th, td {
     border: 1px solid #ddd;
     padding: 8px;
     text-align: left;
-    column-span: 3;
 }
 
 th {
@@ -63,4 +66,15 @@ tr:hover {
 
 .upload-section button:hover {
     background-color: #45a049;
+}
+
+#gradeTable td {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Optional: Add max-width to cells if needed */
+#gradeTable td:first-child {  /* For 課程名稱 column */
+    max-width: 200px;
 }

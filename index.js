@@ -34,6 +34,12 @@ Papa.parse('data.csv', {
                 { data: 'C-' },
                 { data: 'F' }
             ],
+            columnDefs: [
+                {
+                    targets: '_all',
+                    className: 'nowrap'
+                }
+            ],
             language: {
                 url: '//cdn.datatables.net/plug-ins/1.13.7/i18n/zh-HANT.json'
             }
