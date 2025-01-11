@@ -5,16 +5,16 @@ const simpleColumns = [
     { data: '課程名稱' },
     { data: '授課教師' },
     { data: '學期' },
-    { data: 'A+比例' },
-    { data: 'A比例' },
-    { data: 'A-比例' },
-    { data: 'B+比例' },
-    { data: 'B比例' },
-    { data: 'B-比例' },
-    { data: 'C+比例' },
-    { data: 'C比例' },
-    { data: 'C-比例' },
-    { data: 'F比例' }
+    { data: 'A+' },
+    { data: 'A' },
+    { data: 'A-' },
+    { data: 'B+' },
+    { data: 'B' },
+    { data: 'B-' },
+    { data: 'C+' },
+    { data: 'C' },
+    { data: 'C-' },
+    { data: 'F' }
 ];
 
 const detailedColumns = [
@@ -50,6 +50,16 @@ const detailedColumns = [
 function initTable(data) {
     if (table) {
         table.destroy();
+    }
+
+    // Hide both headers first
+    $('#simpleHeader, #detailedHeader').addClass('hidden-header');
+    
+    // Show the appropriate header
+    if (isDetailedMode) {
+        $('#detailedHeader').removeClass('hidden-header');
+    } else {
+        $('#simpleHeader').removeClass('hidden-header');
     }
 
     table = $('#gradeTable').DataTable({

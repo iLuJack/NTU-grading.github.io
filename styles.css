@@ -94,5 +94,5 @@ tr:hover {
 }
 
 .hidden-header {
-    display: none;
+    display: none !important;
 }
