@@ -27,12 +27,22 @@ Papa.parse('data-simplified-with-percentage.csv', {
                 { data: 'F' }
             ],
             language: {
-                url: 'https://cdn.datatables.net/plug-ins/1.13.7/i18n/zh-HANT.json'
+                search: "搜尋:",
+                lengthMenu: "顯示 _MENU_ 筆資料",
+                info: "顯示第 _START_ 至 _END_ 筆資料，共 _TOTAL_ 筆",
+                paginate: {
+                    first: "第一頁",
+                    previous: "上一頁",
+                    next: "下一頁",
+                    last: "最後一頁"
+                }
             },
+            responsive: true,
             order: [[0, 'asc']],
             pageLength: 25
         });
     },
+    dom: 'Bfrtip',
     buttons: [
         'copy',
         'csv',
