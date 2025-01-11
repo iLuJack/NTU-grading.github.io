@@ -5,6 +5,12 @@ Papa.parse('data.csv', {
         $('#gradeTable').DataTable({
             data: results.data,
             columns: [
+                {
+                    className: 'dt-control',
+                    orderable: false,
+                    data: null,
+                    defaultContent: '<button class="expand-button">詳細資訊</button>'
+                },
                 { 
                     data: '課程名稱',
                     title: '課程名稱'
@@ -20,91 +26,11 @@ Papa.parse('data.csv', {
                 { 
                     data: '學期',
                     title: '學期'
-                },
-                { 
-                    data: 'A+比例',
-                    title: 'A+',
-                    type: 'num',
-                    render: function(data) {
-                        return data ? data : '0%';
-                    }
-                },
-                { 
-                    data: 'A比例',
-                    title: 'A',
-                    type: 'num',
-                    render: function(data) {
-                        return data ? data : '0%';
-                    }
-                },
-                { 
-                    data: 'A-比例',
-                    title: 'A-',
-                    type: 'num',
-                    render: function(data) {
-                        return data ? data : '0%';
-                    }
-                },
-                { 
-                    data: 'B+比例',
-                    title: 'B+',
-                    type: 'num',
-                    render: function(data) {
-                        return data ? data : '0%';
-                    }
-                },
-                { 
-                    data: 'B比例',
-                    title: 'B',
-                    type: 'num',
-                    render: function(data) {
-                        return data ? data : '0%';
-                    }
-                },
-                { 
-                    data: 'B-比例',
-                    title: 'B-',
-                    type: 'num',
-                    render: function(data) {
-                        return data ? data : '0%';
-                    }
-                },
-                { 
-                    data: 'C+比例',
-                    title: 'C+',
-                    type: 'num',
-                    render: function(data) {
-                        return data ? data : '0%';
-                    }
-                },
-                { 
-                    data: 'C比例',
-                    title: 'C',
-                    type: 'num',
-                    render: function(data) {
-                        return data ? data : '0%';
-                    }
-                },
-                { 
-                    data: 'C-比例',
-                    title: 'C-',
-                    type: 'num',
-                    render: function(data) {
-                        return data ? data : '0%';
-                    }
-                },
-                { 
-                    data: 'F比例',
-                    title: 'F',
-                    type: 'num',
-                    render: function(data) {
-                        return data ? data : '0%';
-                    }
                 }
             ],
             responsive: true,
             pageLength: 25,
-            order: [[0, 'asc']],
+            order: [[1, 'asc']],
             dom: 'Bfrtip',
             buttons: ['copy', 'csv', 'excel', 'pdf'],
             language: {
@@ -119,5 +45,60 @@ Papa.parse('data.csv', {
                 }
             }
         });
+
+        // Add event listener for opening and closing details
+        $('#gradeTable tbody').on('click', 'td.dt-control button', function() {
+            var tr = $(this).closest('tr');
+            var row = table.row(tr);
+
+            if (row.child.isShown()) {
+                // This row is already open - close it
+                row.child.hide();
+                tr.removeClass('shown');
+                $(this).text('詳細資訊');
+            } else {
+                // Open this row
+                row.child(format(row.data())).show();
+                tr.addClass('shown');
+                $(this).text('收起');
+            }
+        });
     }
 });
+
+// Function to format the expanded row content
+function format(d) {
+    // Create grade distribution table
+    return `
+        <div class="expanded-content">
+            <table class="grade-distribution">
+                <tr>
+                    <th>成績</th>
+                    <th>A+</th>
+                    <th>A</th>
+                    <th>A-</th>
+                    <th>B+</th>
+                    <th>B</th>
+                    <th>B-</th>
+                    <th>C+</th>
+                    <th>C</th>
+                    <th>C-</th>
+                    <th>F</th>
+                </tr>
+                <tr>
+                    <td>比例</td>
+                    <td>${d['A+比例'] || '0%'}</td>
+                    <td>${d['A比例'] || '0%'}</td>
+                    <td>${d['A-比例'] || '0%'}</td>
+                    <td>${d['B+比例'] || '0%'}</td>
+                    <td>${d['B比例'] || '0%'}</td>
+                    <td>${d['B-比例'] || '0%'}</td>
+                    <td>${d['C+比例'] || '0%'}</td>
+                    <td>${d['C比例'] || '0%'}</td>
+                    <td>${d['C-比例'] || '0%'}</td>
+                    <td>${d['F比例'] || '0%'}</td>
+                </tr>
+            </table>
+        </div>
+    `;
+}
