@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My GitHub Pages Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f2f5;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #1a73e8;
+            text-align: center;
+        }
+        .test-section {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .success {
+            color: #28a745;
+        }
+        .button {
+            background-color: #1a73e8;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #1557b0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>GitHub Pages Test Page</h1>
+        
+        <div class="test-section">
+            <h2>✅ If you see this, your page is working!</h2>
+            <p>This is a simple test page to verify your GitHub Pages setup.</p>
+        </div>
+
+        <div class="test-section">
+            <h3>Test Features:</h3>
+            <ul>
+                <li>Basic HTML structure</li>
+                <li>CSS styling</li>
+                <li>Responsive design</li>
+                <li>Interactive elements</li>
+            </ul>
+        </div>
+
+        <div class="test-section">
+            <h3>Interactive Test:</h3>
+            <button class="button" onclick="alert('JavaScript is working!')">Click me!</button>
+        </div>
+
+        <div class="test-section">
+            <h3>Current Time:</h3>
+            <p id="time"></p>
+        </div>
+
+        <footer style="text-align: center; margin-top: 40px;">
+            <p>Created for testing GitHub Pages</p>
+        </footer>
+    </div>
+
+    <script>
+        // Display current time
+        function updateTime() {
+            const timeElement = document.getElementById('time');
+            timeElement.textContent = new Date().toLocaleString();
+        }
+        updateTime();
+        setInterval(updateTime, 1000);
+    </script>
+</body>
+</html>
