@@ -78,3 +78,21 @@ tr:hover {
 #gradeTable td:first-child {  /* For 課程名稱 column */
     max-width: 200px;
 }
+
+.toggle-btn {
+    margin: 10px 0;
+    padding: 8px 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.toggle-btn:hover {
+    background-color: #45a049;
+}
+
+.hidden-header {
+    display: none;
+}
