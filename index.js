@@ -1,8 +1,10 @@
+/* user-preferred theme but not tested and well-maintained
 let prefers = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 let html = document.querySelector('html');
  
 html.classList.add(prefers);
 html.setAttribute('data-bs-theme', prefers);
+*/
 
 Papa.parse('data-simplified-with-percentage.csv', {
     download: true,
