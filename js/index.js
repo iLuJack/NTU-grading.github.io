@@ -1,4 +1,12 @@
-Papa.parse('/assets/grade-data/data-simplified-with-percentage.csv', {
+// Get base URL from current page URL
+const getBaseUrl = () => {
+    const paths = window.location.pathname.split('/');
+    const repoName = 'NTU-grading.github.io';
+    const repoIndex = paths.findIndex(p => p === repoName);
+    return repoIndex !== -1 ? '/' + paths.slice(1, repoIndex + 1).join('/') : '';
+};
+
+Papa.parse(getBaseUrl() + '/assets/grade-data/data-simplified-with-percentage.csv', {
     download: true,
     header: true,
     complete: function(results) {
