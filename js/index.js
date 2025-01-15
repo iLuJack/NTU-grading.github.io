@@ -6,7 +6,7 @@ html.classList.add(prefers);
 html.setAttribute('data-bs-theme', prefers);
 */
 
-Papa.parse('data-simplified-with-percentage.csv', {
+Papa.parse('../assets/grade-data/data-simplified-with-percentage.csv', {
     download: true,
     header: true,
     complete: function(results) {
