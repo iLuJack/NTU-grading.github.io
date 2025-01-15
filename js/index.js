@@ -1,10 +1,6 @@
-/* user-preferred theme but not tested and well-maintained
-let prefers = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-let html = document.querySelector('html');
- 
-html.classList.add(prefers);
-html.setAttribute('data-bs-theme', prefers);
-*/
+---
+---
+/* user-preferred theme but not tested and well-maintained */
 
 // Get the base URL from Jekyll configuration
 const baseUrl = '{{ site.baseurl }}' || '';

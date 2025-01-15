@@ -2,20 +2,28 @@
 <html lang="{{ site.lang }}">
 <head>
     <meta charset="UTF-8">
-    <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
     <meta name="description" content="{{ site.description }}">
     
-    <!-- Your CSS files -->
-    <link rel="stylesheet" href="{{ '/css/style.css' | relative_url }}">
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ site.baseurl }}/assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ site.baseurl }}/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ site.baseurl }}/assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="{{ site.baseurl }}/assets/favicon/site.webmanifest">
+    
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.2/css/buttons.dataTables.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/styles.css">
     
     {% include google-analytics.html %}
 </head>
 <body>
     <header>
-        <nav>
-            <!-- Your navigation menu -->
-        </nav>
+        <!-- Add your header/navigation here -->
     </header>
 
     <main>
@@ -30,38 +38,17 @@
                 <button onclick="rejectAnalytics()" class="reject-btn">拒絕</button>
             </div>
         </div>
-        
-        <div class="footer-content">
-            <!-- Your footer content -->
-            <p>&copy; {{ 'now' | date: "%Y" }} {{ site.title }}</p>
-        </div>
     </footer>
 
-    <!-- Your JS files -->
-    <script src="{{ '/js/index.js' | relative_url }}"></script>
+    <!-- jQuery and DataTables -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.2/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.html5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
     
-    <script>
-        // Cookie consent management
-        function showCookieNotice() {
-            if (localStorage.getItem('analytics-consent') === null) {
-                document.getElementById('cookie-notice').style.display = 'block';
-            }
-        }
-
-        function acceptAnalytics() {
-            localStorage.setItem('analytics-consent', 'accepted');
-            localStorage.removeItem('analytics-opt-out');
-            document.getElementById('cookie-notice').style.display = 'none';
-            location.reload();
-        }
-
-        function rejectAnalytics() {
-            localStorage.setItem('analytics-consent', 'rejected');
-            localStorage.setItem('analytics-opt-out', 'true');
-            document.getElementById('cookie-notice').style.display = 'none';
-        }
-
-        document.addEventListener('DOMContentLoaded', showCookieNotice);
-    </script>
+    <!-- Custom JS -->
+    <script src="{{ site.baseurl }}/js/index.js"></script>
 </body>
 </html> 
