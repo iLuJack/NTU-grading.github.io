@@ -19,53 +19,6 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ site.baseurl }}/css/styles.css">
     
-    <!-- Cookie notice styles -->
-    <style>
-        .cookie-notice {
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            background: rgba(0, 0, 0, 0.9);
-            color: white;
-            padding: 1rem;
-            text-align: center;
-            z-index: 1000;
-        }
-        .cookie-buttons button {
-            margin: 0.5rem;
-            padding: 0.5rem 1rem;
-            cursor: pointer;
-        }
-        .accept-btn {
-            background: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 4px;
-        }
-        .reject-btn {
-            background: #f44336;
-            color: white;
-            border: none;
-            border-radius: 4px;
-        }
-        body {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-        main {
-            flex: 1;
-        }
-        footer {
-            margin-top: auto;
-        }
-        .container {
-            padding: 20px;
-            margin-bottom: 60px;
-        }
-    </style>
-    
-    {% include google-analytics.html %}
 </head>
 <body>
     <header>
@@ -76,15 +29,13 @@
         {{ content }}
     </main>
 
-    <footer>
-        <div id="cookie-notice" style="display: none;" class="cookie-notice">
-            <p>本網站使用 cookies 來改善使用者體驗</p>
-            <div class="cookie-buttons">
-                <button onclick="acceptAnalytics()" class="accept-btn">接受</button>
-                <button onclick="rejectAnalytics()" class="reject-btn">拒絕</button>
-            </div>
+    <div id="cookie-notice" style="display: none;" class="cookie-notice">
+        <p>本網站使用 cookies 來改善使用者體驗</p>
+        <div class="cookie-buttons">
+            <button onclick="acceptAnalytics()" class="accept-btn">接受</button>
+            <button onclick="rejectAnalytics()" class="reject-btn">拒絕</button>
         </div>
-    </footer>
+    </div>
 
     <!-- jQuery and DataTables -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
@@ -96,5 +47,30 @@
     
     <!-- Custom JS -->
     <script src="{{ site.baseurl }}/js/index.js"></script>
+
+    <!-- Cookie consent script -->
+    <script>
+        // Show cookie notice on page load if consent not given
+        document.addEventListener('DOMContentLoaded', function() {
+            if (localStorage.getItem('analytics-consent') === null) {
+                document.getElementById('cookie-notice').style.display = 'block';
+            }
+        });
+
+        // Accept analytics
+        function acceptAnalytics() {
+            localStorage.setItem('analytics-consent', 'accepted');
+            localStorage.removeItem('analytics-opt-out');
+            document.getElementById('cookie-notice').style.display = 'none';
+            location.reload(); // Reload to enable analytics
+        }
+
+        // Reject analytics
+        function rejectAnalytics() {
+            localStorage.setItem('analytics-consent', 'rejected');
+            localStorage.setItem('analytics-opt-out', 'true');
+            document.getElementById('cookie-notice').style.display = 'none';
+        }
+    </script>
 </body>
 </html> 
