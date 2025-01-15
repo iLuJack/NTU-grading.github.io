@@ -29,10 +29,39 @@
             color: white;
             padding: 1rem;
             text-align: center;
+            z-index: 1000;
         }
         .cookie-buttons button {
             margin: 0.5rem;
             padding: 0.5rem 1rem;
+            cursor: pointer;
+        }
+        .accept-btn {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+        }
+        .reject-btn {
+            background: #f44336;
+            color: white;
+            border: none;
+            border-radius: 4px;
+        }
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        main {
+            flex: 1;
+        }
+        footer {
+            margin-top: auto;
+        }
+        .container {
+            padding: 20px;
+            margin-bottom: 60px;
         }
     </style>
     
