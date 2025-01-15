@@ -1,0 +1,62 @@
+# Site Settings
+title: 臺大課程成績分佈網
+description: National Taiwan University Course Grade Distribution
+baseurl: "/NTU-grading.github.io"
+url: "https://ilujack.github.io"
+repository: iLuJack/NTU-grading.github.io
+
+# Build settings
+markdown: kramdown
+encoding: utf-8
+timezone: Asia/Taipei
+
+# Exclude from processing
+exclude:
+  - .git/
+  - .github/
+  - node_modules/
+  - README.md
+  - LICENSE
+  - Gemfile
+  - Gemfile.lock
+
+# Custom 404 page
+defaults:
+  - scope:
+      path: "404.html"
+    values:
+      permalink: /404.html
+
+# SEO settings
+lang: zh-Hant
+author:
+  name: iLuJack
+  url: https://github.com/iLuJack
+
+# Social & Analytics
+google_analytics: G-3ZMGL6F158  # Your actual GA4 Measurement ID
+social:
+  github: iLuJack/NTU-grading.github.io
+
+# Optimization
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  profile: false
+  blanklines: false
+  ignore:
+    envs: []
+
+# Security headers
+webmaster_verifications:
+  google: # Add if needed
+  bing: # Add if needed
+
+# Cache settings
+cache:
+  enabled: true
+
+# Features
+features:
+  search: true  # Enables search functionality

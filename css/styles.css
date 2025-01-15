@@ -45,3 +45,37 @@
 .info-section a:hover {
     text-decoration: underline;
 }
+
+.cookie-notice {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    z-index: 1000;
+}
+
+.cookie-buttons {
+    margin-top: 0.5rem;
+}
+
+.cookie-buttons button {
+    margin: 0 0.5rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.accept-btn {
+    background: #4CAF50;
+    color: white;
+}
+
+.reject-btn {
+    background: #f44336;
+    color: white;
+}

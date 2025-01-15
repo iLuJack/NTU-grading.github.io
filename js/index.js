@@ -6,7 +6,10 @@ html.classList.add(prefers);
 html.setAttribute('data-bs-theme', prefers);
 */
 
-Papa.parse('../assets/grade-data/data-simplified-with-percentage.csv', {
+// Get the base URL from Jekyll configuration
+const baseUrl = '{{ site.baseurl }}' || '';
+
+Papa.parse(baseUrl + '/data/grades.csv', {
     download: true,
     header: true,
     complete: function(results) {
@@ -42,6 +45,6 @@ Papa.parse('../assets/grade-data/data-simplified-with-percentage.csv', {
         });
     },
     error: function(error) {
-        console.error('Error parsing CSV:', error);
+        console.error('Error loading CSV:', error);
     }
 });

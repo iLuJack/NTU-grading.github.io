@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang }}">
+<head>
+    <meta charset="UTF-8">
+    <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{ site.description }}">
+    
+    <!-- Your CSS files -->
+    <link rel="stylesheet" href="{{ '/css/style.css' | relative_url }}">
+    
+    {% include google-analytics.html %}
+</head>
+<body>
+    <header>
+        <nav>
+            <!-- Your navigation menu -->
+        </nav>
+    </header>
+
+    <main>
+        {{ content }}
+    </main>
+
+    <footer>
+        <div id="cookie-notice" style="display: none;" class="cookie-notice">
+            <p>本網站使用 cookies 來改善使用者體驗</p>
+            <div class="cookie-buttons">
+                <button onclick="acceptAnalytics()" class="accept-btn">接受</button>
+                <button onclick="rejectAnalytics()" class="reject-btn">拒絕</button>
+            </div>
+        </div>
+        
+        <div class="footer-content">
+            <!-- Your footer content -->
+            <p>&copy; {{ 'now' | date: "%Y" }} {{ site.title }}</p>
+        </div>
+    </footer>
+
+    <!-- Your JS files -->
+    <script src="{{ '/js/index.js' | relative_url }}"></script>
+    
+    <script>
+        // Cookie consent management
+        function showCookieNotice() {
+            if (localStorage.getItem('analytics-consent') === null) {
+                document.getElementById('cookie-notice').style.display = 'block';
+            }
+        }
+
+        function acceptAnalytics() {
+            localStorage.setItem('analytics-consent', 'accepted');
+            localStorage.removeItem('analytics-opt-out');
+            document.getElementById('cookie-notice').style.display = 'none';
+            location.reload();
+        }
+
+        function rejectAnalytics() {
+            localStorage.setItem('analytics-consent', 'rejected');
+            localStorage.setItem('analytics-opt-out', 'true');
+            document.getElementById('cookie-notice').style.display = 'none';
+        }
+
+        document.addEventListener('DOMContentLoaded', showCookieNotice);
+    </script>
+</body>
+</html> 
