@@ -1,11 +1,4 @@
----
----
-/* user-preferred theme but not tested and well-maintained */
-
-// Get the base URL from Jekyll configuration
-const baseUrl = '{{ site.baseurl }}' || '';
-
-Papa.parse(baseUrl + '/assets/grade-data/data-simplified-with-percentage.csv', {
+Papa.parse('/assets/grade-data/data-simplified-with-percentage.csv', {
     download: true,
     header: true,
     complete: function(results) {
