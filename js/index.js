@@ -9,7 +9,7 @@ html.setAttribute('data-bs-theme', prefers);
 // Get the base URL from Jekyll configuration
 const baseUrl = '{{ site.baseurl }}' || '';
 
-Papa.parse(baseUrl + '/data/grades.csv', {
+Papa.parse(baseUrl + '/assets/grade-data/data-simplified-with-percentage.csv', {
     download: true,
     header: true,
     complete: function(results) {
