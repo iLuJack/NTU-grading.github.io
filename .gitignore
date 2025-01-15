@@ -1,2 +1,6 @@
 .DS_Store
 .venv/
+data/**/*.csv    # Ignore all CSV files in data directory
+data/raw/*       # Ignore all raw data
+data/processed/* # Ignore all processed data
+!data/**/.gitkeep  # Keep the directory structure
