@@ -1,22 +1,15 @@
 {% if site.google_analytics %}
 <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
 <script>
-  // Only load analytics if user hasn't opted out
+  // Only load analytics if user has consented
   if (!localStorage.getItem('analytics-opt-out')) {
-    // Create script element dynamically
-    const script = document.createElement('script');
-    script.src = 'https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}';
-    script.async = true;
-    document.head.appendChild(script);
-
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', '{{ site.google_analytics }}', {
-      'anonymize_ip': true,  // GDPR compliance
-      'cookie_flags': 'SameSite=None;Secure',  // Enhanced security
-      'allow_google_signals': false  // Respect privacy
+      'anonymize_ip': true,
+      'cookie_flags': 'SameSite=None;Secure'
     });
   }
 </script>

@@ -60,3 +60,10 @@ cache:
 # Features
 features:
   search: true  # Enables search functionality
+
+# Looks good, but consider adding:
+defaults:
+  - scope:
+      path: "assets/grade-data"
+    values:
+      layout: null

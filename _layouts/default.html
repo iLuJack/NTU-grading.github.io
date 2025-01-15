@@ -19,9 +19,22 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ site.baseurl }}/css/styles.css">
     
-    <script>
-        window.BASE_URL = '{{ site.baseurl }}';
-    </script>
+    <!-- Cookie notice styles -->
+    <style>
+        .cookie-notice {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        .cookie-buttons button {
+            margin: 0.5rem;
+            padding: 0.5rem 1rem;
+        }
+    </style>
     
     {% include google-analytics.html %}
 </head>
@@ -45,7 +58,7 @@
     </footer>
 
     <!-- jQuery and DataTables -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/2.4.2/js/dataTables.buttons.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>

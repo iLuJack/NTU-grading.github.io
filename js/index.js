@@ -10,6 +10,10 @@ Papa.parse(getBaseUrl() + '/assets/grade-data/data-simplified-with-percentage.cs
     download: true,
     header: true,
     complete: function(results) {
+        if (results.errors.length > 0) {
+            console.error('CSV parsing errors:', results.errors);
+            return;
+        }
         $('#gradeTable').DataTable({
             scrollX: true,
             data: results.data,
@@ -43,5 +47,7 @@ Papa.parse(getBaseUrl() + '/assets/grade-data/data-simplified-with-percentage.cs
     },
     error: function(error) {
         console.error('Error loading CSV:', error);
+        document.querySelector('.container').innerHTML = 
+            '<p class="error">抱歉，資料載入失敗。請稍後再試。</p>';
     }
 });
