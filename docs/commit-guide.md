@@ -1,3 +1,4 @@
+# Test
 # Commit Message Guidelines
 
 ## Format Structure
