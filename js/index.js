@@ -6,7 +6,7 @@ html.classList.add(prefers);
 html.setAttribute('data-bs-theme', prefers);
 */
 
-Papa.parse('../assets/grade-data/data-simplified-with-percentage.csv', {
+Papa.parse('/NTU-grading.github.io/assets/grade-data/data-simplified-with-percentage.csv', {
     download: true,
     header: true,
     complete: function(results) {
