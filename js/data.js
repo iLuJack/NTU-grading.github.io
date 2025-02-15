@@ -17,7 +17,14 @@ Papa.parse('/NTU-grading.github.io/assets/grade-data/data-simplified-with-percen
             buttons: [
                 'copy',
                 'csv',
-                'excel'
+                'excel',
+                {
+                    text: '詳細版',
+                    className: 'dt-button',
+                    action: function ( e, dt, node, config ) {
+                        window.location.href = '/detailed/';
+                    }
+                }
             ],
             columns: [
                 { data: '課程名稱' },
