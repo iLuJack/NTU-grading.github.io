@@ -14,7 +14,7 @@ Papa.parse('/NTU-grading.github.io/assets/grade-data/data-expanded.csv', {
                     text: '簡易版',
                     className: 'dt-button',
                     action: function ( e, dt, node, config ) {
-                        window.location.href = '/';
+                        window.location.href = '/NTU-grading.github.io/';
                     }
                 }
             ],

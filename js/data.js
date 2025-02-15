@@ -22,7 +22,7 @@ Papa.parse('/NTU-grading.github.io/assets/grade-data/data-simplified-with-percen
                     text: '詳細版',
                     className: 'dt-button',
                     action: function ( e, dt, node, config ) {
-                        window.location.href = '/detailed/';
+                        window.location.href = '/NTU-grading.github.io/detailed/';
                     }
                 }
             ],
